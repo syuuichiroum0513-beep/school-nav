@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>学内ナビゲーション</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="site-header">
+      <div>
+        <p class="eyebrow">CAMPUS NAVIGATION</p>
+        <h1>学内ナビゲーション</h1>
+      </div>
+      <span class="official-badge">学校公式ツール</span>
+    </header>
+
+    <section class="panel" id="setup-panel">
+      <h2>1. 目的地を選択</h2>
+      <label for="destination-search">教員名・部屋名を検索</label>
+      <input
+        id="destination-search"
+        class="text-input"
+        type="search"
+        inputmode="search"
+        autocomplete="off"
+        placeholder="例：田中、たなか、情報演習室201"
+        aria-describedby="destination-search-status"
+      >
+      <p id="destination-search-status" class="search-status" aria-live="polite"></p>
+
+      <label for="destination-select" class="secondary-label">検索結果から選択</label>
+      <select id="destination-select">
+        <option value="">目的地を選択してください</option>
+      </select>
+      <p class="help-text">教員名・部屋名・ひらがな・カタカナの一部を入力できます。</p>
+    </section>
+
+    <section class="panel" id="location-panel">
+      <h2>2. 現在地を設定</h2>
+      <div class="location-actions">
+        <button class="primary" id="scan-button" type="button">QRコードをスキャン</button>
+        <button class="secondary" id="manual-button" type="button">現在地を手動で選択</button>
+      </div>
+      <p class="help-text">カメラが使えない場合も、上の「現在地を手動で選択」から設定できます。</p>
+
+      <div id="qr-area" class="qr-area hidden">
+        <div id="reader"></div>
+        <p id="scan-status" class="status-text" aria-live="polite">カメラへのアクセスを許可してください。</p>
+        <button class="link-button" id="stop-scan-button" type="button">スキャンを停止</button>
+      </div>
+
+      <div id="manual-area" class="manual-area hidden">
+        <label for="node-select">現在地ノード</label>
+        <select id="node-select">
+          <option value="">現在地を選択してください</option>
+        </select>
+      </div>
+
+      <div class="current-location">
+        <span>現在地</span>
+        <strong id="current-location-text">未設定</strong>
+      </div>
+    </section>
+
+    <section class="panel hidden" id="guide-panel">
+      <div class="guide-header">
+        <h2>3. 次の案内</h2>
+        <span id="progress-text" class="progress">-</span>
+      </div>
+      <div id="guide-content"></div>
+      <div class="guide-actions">
+        <button class="primary" id="arrive-button" type="button">この地点に到着した</button>
+        <button class="secondary" id="rescan-button" type="button">次のQRをスキャン</button>
+      </div>
+      <p id="guide-note" class="help-text"></p>
+    </section>
+
+    <section class="panel complete-panel hidden" id="complete-panel">
+      <h2 id="complete-heading">到着しました</h2>
+      <p id="complete-text"></p>
+      <button class="secondary" id="reset-button" type="button">最初からやり直す</button>
+    </section>
+
+    <section class="error-banner hidden" id="error-banner" role="alert"></section>
+
+    <footer class="site-footer">地点・経路情報は data.json から読み込んでいます。</footer>
+  </main>
+
+  <script src="https://unpkg.com/html5-qrcode" defer></script>
+  <script src="config.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

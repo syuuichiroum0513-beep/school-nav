@@ -1,0 +1,14 @@
+{
+  "name": "school-nav-prototype",
+  "version": "1.0.0",
+  "private": true,
+  "description": "学内ナビゲーションWebアプリの補助スクリプト",
+  "scripts": {
+    "check-data": "node scripts/validate-data.js",
+    "generate-qr": "node scripts/generate-qrcodes.js"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4",
+    "sharp": "^0.34.3"
+  }
+}

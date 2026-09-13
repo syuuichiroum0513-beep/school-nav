@@ -1,0 +1,177 @@
+{
+  "nodes": [
+    {
+      "id": "main-entrance",
+      "name": "正門入口",
+      "building": "本館",
+      "floor": 1,
+      "type": "entrance",
+      "kana": "せいもんいりぐち"
+    },
+    {
+      "id": "main-hall-1f",
+      "name": "本館1階ホール",
+      "building": "本館",
+      "floor": 1,
+      "type": "hall",
+      "kana": "ほんかん1かいほーる"
+    },
+    {
+      "id": "stair-east-1f",
+      "name": "東階段 1階",
+      "building": "本館",
+      "floor": 1,
+      "type": "stair",
+      "kana": "ひがしかいだん1かい"
+    },
+    {
+      "id": "stair-east-2f",
+      "name": "東階段 2階",
+      "building": "本館",
+      "floor": 2,
+      "type": "stair",
+      "kana": "ひがしかいだん2かい"
+    },
+    {
+      "id": "bridge-2f",
+      "name": "2階渡り廊下入口",
+      "building": "本館・実験棟連絡部",
+      "floor": 2,
+      "type": "bridge",
+      "kana": "2かいわたりろうかいりぐち"
+    },
+    {
+      "id": "lab-building-2f",
+      "name": "実験棟2階ホール",
+      "building": "実験棟",
+      "floor": 2,
+      "type": "hall",
+      "kana": "じっけんとう2かいほーる"
+    },
+    {
+      "id": "room-201",
+      "name": "情報演習室201",
+      "building": "実験棟",
+      "floor": 2,
+      "type": "room",
+      "kana": "じょうほうえんしゅうしつ201"
+    },
+    {
+      "id": "teacher-a",
+      "name": "田中先生の部屋",
+      "building": "実験棟",
+      "floor": 2,
+      "type": "teacher",
+      "kana": "たなかせんせいのへや"
+    },
+    {
+      "id": "main-hall-2f",
+      "name": "本館2階ホール",
+      "building": "本館",
+      "floor": 2,
+      "type": "hall",
+      "kana": "ほんかん2かいほーる"
+    },
+    {
+      "id": "stair-east-3f",
+      "name": "東階段 3階",
+      "building": "本館",
+      "floor": 3,
+      "type": "stair",
+      "kana": "ひがしかいだん3かい"
+    },
+    {
+      "id": "main-hall-3f",
+      "name": "本館3階ホール",
+      "building": "本館",
+      "floor": 3,
+      "type": "hall",
+      "kana": "ほんかん3かいほーる"
+    }
+  ],
+  "edges": [
+    {
+      "from": "main-entrance",
+      "to": "main-hall-1f",
+      "cost": 1,
+      "instruction": "正門から本館1階ホールまで直進してください。"
+    },
+    {
+      "from": "main-hall-1f",
+      "to": "stair-east-1f",
+      "cost": 1,
+      "instruction": "右手の東階段へ進んでください。"
+    },
+    {
+      "from": "stair-east-1f",
+      "to": "stair-east-2f",
+      "cost": 1,
+      "instruction": "東階段で2階まで上がってください。"
+    },
+    {
+      "from": "bridge-2f",
+      "to": "lab-building-2f",
+      "cost": 2,
+      "instruction": "渡り廊下を渡って実験棟2階へ進んでください。"
+    },
+    {
+      "from": "lab-building-2f",
+      "to": "room-201",
+      "cost": 1,
+      "instruction": "廊下を進み、情報演習室201の前まで進んでください。"
+    },
+    {
+      "from": "lab-building-2f",
+      "to": "teacher-a",
+      "cost": 1,
+      "instruction": "左手の田中先生の部屋へ進んでください。"
+    },
+    {
+      "from": "room-201",
+      "to": "teacher-a",
+      "cost": 1,
+      "instruction": "情報演習室201の先にある田中先生の部屋へ進んでください。"
+    },
+    {
+      "from": "stair-east-2f",
+      "to": "main-hall-2f",
+      "cost": 1,
+      "instruction": "階段を出て本館2階ホールへ進んでください。"
+    },
+    {
+      "from": "main-hall-2f",
+      "to": "stair-east-3f",
+      "cost": 1,
+      "instruction": "東階段へ進んでください。"
+    },
+    {
+      "from": "stair-east-3f",
+      "to": "main-hall-3f",
+      "cost": 1,
+      "instruction": "階段を出て本館3階ホールへ進んでください。"
+    },
+    {
+      "from": "main-hall-2f",
+      "to": "bridge-2f",
+      "cost": 1,
+      "instruction": "2階の渡り廊下入口まで進んでください。"
+    }
+  ],
+  "destinations": [
+    {
+      "id": "teacher-a",
+      "label": "田中先生の部屋",
+      "kana": "たなかせんせいのへや"
+    },
+    {
+      "id": "room-201",
+      "label": "情報演習室201",
+      "kana": "じょうほうえんしゅうしつ201"
+    },
+    {
+      "id": "main-hall-3f",
+      "label": "本館3階ホール",
+      "kana": "ほんかん3かいほーる"
+    }
+  ]
+}
